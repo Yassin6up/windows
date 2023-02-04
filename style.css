@@ -1,0 +1,328 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI Regular";
+}
+:root{
+  --mainColor : #889bb1e6
+}
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  user-select: none;
+  overflow: hidden;
+}
+.apps {
+  display: flex;
+  height: 70%;
+  margin-left: 20px;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.apps div {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+}
+.apps div p {
+  padding: 5px;
+}
+.apps img {
+  width: 50px;
+  aspect-ratio: 1/1;
+}
+#Recycle {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+}
+.navBare {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background: var(--mainColor) ;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  backdrop-filter: blur(1px);
+  z-index: 10000;
+}
+
+.navBare img {
+  width: 35px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.deffApp {
+  display: flex;
+  
+  width: 20%;
+  justify-content: space-between;
+}
+.appsHestory {
+  width: 50%;
+  
+  display: flex;
+  height: 34px;
+}
+.battery_and_wifi {
+  width: 10%;
+  
+  display: flex;
+  height: 34px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.battery_and_wifi div img {
+  width: 20px;
+  aspect-ratio: 1/1;
+
+}
+
+.time {
+  width: 10%;
+  display: flex;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+}
+.start{
+  width: 25%;
+  height: 60%;
+  background:#c0c0c0;
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  transform: translateY(100%);
+  transition: 0.1s all;
+}
+.start .shutedown{
+  width: fit-content;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ 
+  margin-left: 10px;
+}
+.start .shutedown img {
+  width: 40px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.start .title p{
+  font-size: 30px;
+  transform: rotate(270deg);
+  width: 300px;
+  height: fit-content;
+  position: absolute;
+  left: -120px;
+  top: 50px;
+  color: beige;
+  font-weight: 700;
+  text-shadow: 0 0 10px  white;
+  filter: blur(1px);
+}
+.Content{
+  background-color: #999999;
+  display: flex;
+  width: 20%;
+  justify-content: ce;
+  align-items: flex-end;
+}
+.menuApp{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  gap: 3px;
+}
+.active{
+  transform: translateY(0);
+}
+.menuApp div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid #999999 ;
+  padding: 3px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+.menuApp div:hover{
+  background-color: #999999 ;
+}
+
+.menuApp div img{
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+.Table{
+  width: 60%;
+  height: 70%;
+  transform: translateY(-80%) translateX(40%) ;
+  background-color: white ;
+  padding: 1px;
+  resize: both;
+  position:  absolute ;
+}
+.fullTable{
+  width: 100vw;
+  height: 94vh;
+  transform: translateY(-74%) ;
+}
+.Table .title{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: antiquewhite;
+  height: fit-content;
+  background-color: rgb(106, 106, 233);
+  align-items: center;
+  padding: 2px ;
+}
+.Table .title .iconTop{
+display: flex;
+width: 10%;
+justify-content: space-evenly;
+align-items: center;
+}
+.Table .title .iconTop div{
+  background-color: #999999;
+  padding: 3px;
+  width: 30.3% ;
+  cursor: pointer;
+  height: fit-content;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  transition:  0.3s all ;
+}
+.Table .title .iconTop div:hover{
+  background-color:#c0c0c0;
+}
+#close:hover{
+  background-color: red;
+}
+.navEle{
+  width: 100%;
+  background-color: #c0c0c0;
+  display: flex;
+}
+.navEle p{
+  padding: 5px;
+  color: antiquewhite;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.navEle p:hover{
+color: black;
+}
+.selection{
+  width: 100%;
+  background-color: #c0c0c0;
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+.selection div{
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: whitesmoke;
+  padding: 6px ;
+  
+}
+.selection img{
+  width: 25px;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.selection img:hover{
+  filter: grayscale(0);
+}
+.line{
+  width: 1px;
+  height:30px;
+  background-color: rgb(106, 106, 106);
+}
+.contentTable{
+  width:100%;
+  height: 72%;
+  
+  display: flex;
+  justify-content: space-between;
+}
+.pagesec1{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.page2Filles{
+  width: 70%;
+  height: fit-content;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(5,auto);
+  gap: 10px;
+  
+}
+.page2Filles div{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.page2Filles div img{
+  width: 40%;
+  aspect-ratio: 1/1;
+}
+.pagesec1 .logoDiv {
+  font-size: 20px;
+  font-weight: 500;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+  padding: 20px;
+}
+.pagesec1 .logoDiv img{
+  width: 60px;
+}
+.colors{
+  width: 5px;
+  height: 60%;
+  background-image: linear-gradient(to  top, rgb(125, 117, 117) , rgb(237, 230, 220) , rgb(78, 79, 75), rgb(237, 230, 220) , rgb(78, 79, 75));
+  position: absolute;
+  left: 30%;
+}
