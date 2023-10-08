@@ -4,8 +4,8 @@
   box-sizing: border-box;
   font-family: "Segoe UI Regular";
 }
-:root{
-  --mainColor : #889bb1e6
+:root {
+  --mainColor: #889bb1e6;
 }
 body {
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ body {
   display: flex;
   width: 100%;
   height: fit-content;
-  background: var(--mainColor) ;
+  background: var(--mainColor);
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -62,19 +62,19 @@ body {
 }
 .deffApp {
   display: flex;
-  
+
   width: 20%;
   justify-content: space-between;
 }
 .appsHestory {
   width: 50%;
-  
+
   display: flex;
   height: 34px;
 }
 .battery_and_wifi {
   width: 10%;
-  
+
   display: flex;
   height: 34px;
   justify-content: space-evenly;
@@ -83,7 +83,6 @@ body {
 .battery_and_wifi div img {
   width: 20px;
   aspect-ratio: 1/1;
-
 }
 
 .time {
@@ -98,23 +97,23 @@ body {
   font-weight: 500;
   color: white;
 }
-.start{
+.start {
   width: 25%;
   height: 60%;
-  background:#c0c0c0;
+  background: #c0c0c0;
   position: absolute;
   bottom: 30px;
   display: flex;
   transform: translateY(100%);
   transition: 0.1s all;
 }
-.start .shutedown{
+.start .shutedown {
   width: fit-content;
   height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
- 
+
   margin-left: 10px;
 }
 .start .shutedown img {
@@ -123,7 +122,7 @@ body {
   cursor: pointer;
 }
 
-.start .title p{
+.start .title p {
   font-size: 30px;
   transform: rotate(270deg);
   width: 300px;
@@ -133,17 +132,17 @@ body {
   top: 50px;
   color: beige;
   font-weight: 700;
-  text-shadow: 0 0 10px  white;
+  text-shadow: 0 0 10px white;
   filter: blur(1px);
 }
-.Content{
+.Content {
   background-color: #999999;
   display: flex;
   width: 20%;
   justify-content: ce;
   align-items: flex-end;
 }
-.menuApp{
+.menuApp {
   width: 80%;
   height: 100%;
   display: flex;
@@ -151,7 +150,7 @@ body {
   padding: 2px;
   gap: 3px;
 }
-.active{
+.active {
   transform: translateY(0);
 }
 .menuApp div {
@@ -159,34 +158,34 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 2px solid #999999 ;
+  border-bottom: 2px solid #999999;
   padding: 3px;
   cursor: pointer;
   transition: 0.2s all;
 }
-.menuApp div:hover{
-  background-color: #999999 ;
+.menuApp div:hover {
+  background-color: #999999;
 }
 
-.menuApp div img{
+.menuApp div img {
   width: 30px;
   aspect-ratio: 1/1;
 }
-.Table{
+.Table {
   width: 60%;
   height: 70%;
-  transform: translateY(-80%) translateX(40%) ;
-  background-color: white ;
+  transform: translateY(-80%) translateX(40%);
+  background-color: white;
   padding: 1px;
   resize: both;
-  position:  absolute ;
+  position: absolute;
 }
-.fullTable{
+.fullTable {
   width: 100vw;
   height: 94vh;
-  transform: translateY(-74%) ;
+  transform: translateY(-74%);
 }
-.Table .title{
+.Table .title {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -194,53 +193,53 @@ body {
   height: fit-content;
   background-color: rgb(106, 106, 233);
   align-items: center;
-  padding: 2px ;
+  padding: 2px;
 }
-.Table .title .iconTop{
-display: flex;
-width: 10%;
-justify-content: space-evenly;
-align-items: center;
+.Table .title .iconTop {
+  display: flex;
+  width: 10%;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.Table .title .iconTop div{
+.Table .title .iconTop div {
   background-color: #999999;
   padding: 3px;
-  width: 30.3% ;
+  width: 30.3%;
   cursor: pointer;
   height: fit-content;
   text-align: center;
   font-size: 15px;
   font-weight: 600;
-  transition:  0.3s all ;
+  transition: 0.3s all;
 }
-.Table .title .iconTop div:hover{
-  background-color:#c0c0c0;
+.Table .title .iconTop div:hover {
+  background-color: #c0c0c0;
 }
-#close:hover{
+#close:hover {
   background-color: red;
 }
-.navEle{
+.navEle {
   width: 100%;
   background-color: #c0c0c0;
   display: flex;
 }
-.navEle p{
+.navEle p {
   padding: 5px;
   color: antiquewhite;
   cursor: pointer;
   transition: 0.3s all;
 }
-.navEle p:hover{
-color: black;
+.navEle p:hover {
+  color: black;
 }
-.selection{
+.selection {
   width: 100%;
   background-color: #c0c0c0;
   display: flex;
   height: 50px;
   align-items: center;
 }
-.selection div{
+.selection div {
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -248,30 +247,29 @@ color: black;
   align-items: center;
   font-size: 14px;
   color: whitesmoke;
-  padding: 6px ;
-  
+  padding: 6px;
 }
-.selection img{
+.selection img {
   width: 25px;
   cursor: pointer;
   filter: grayscale(100%);
 }
-.selection img:hover{
+.selection img:hover {
   filter: grayscale(0);
 }
-.line{
+.line {
   width: 1px;
-  height:30px;
+  height: 30px;
   background-color: rgb(106, 106, 106);
 }
-.contentTable{
-  width:100%;
+.contentTable {
+  width: 100%;
   height: 72%;
-  
+
   display: flex;
   justify-content: space-between;
 }
-.pagesec1{
+.pagesec1 {
   width: 30%;
   height: 100%;
   display: flex;
@@ -280,16 +278,15 @@ color: black;
   flex-direction: column;
   text-align: center;
 }
-.page2Filles{
+.page2Filles {
   width: 70%;
   height: fit-content;
   display: grid;
   justify-content: space-evenly;
-  grid-template-columns: repeat(5,auto);
+  grid-template-columns: repeat(5, auto);
   gap: 10px;
-  
 }
-.page2Filles div{
+.page2Filles div {
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -300,7 +297,7 @@ color: black;
   width: fit-content;
   cursor: pointer;
 }
-.page2Filles div img{
+.page2Filles div img {
   width: 40%;
   aspect-ratio: 1/1;
 }
@@ -316,13 +313,49 @@ color: black;
   height: fit-content;
   padding: 20px;
 }
-.pagesec1 .logoDiv img{
+.pagesec1 .logoDiv img {
   width: 60px;
 }
-.colors{
+.colors {
   width: 5px;
   height: 60%;
-  background-image: linear-gradient(to  top, rgb(125, 117, 117) , rgb(237, 230, 220) , rgb(78, 79, 75), rgb(237, 230, 220) , rgb(78, 79, 75));
+  background-image: linear-gradient(
+    to top,
+    rgb(125, 117, 117),
+    rgb(237, 230, 220),
+    rgb(78, 79, 75),
+    rgb(237, 230, 220),
+    rgb(78, 79, 75)
+  );
   position: absolute;
   left: 30%;
+}
+
+.prompet {
+  resize: both;
+  width: 60vw;
+  height: 50vh;
+  background-color: black;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: "Fira Code", monospace;
+}
+.prompet * {
+  font-family: "Fira Code", monospace;
+}
+.prompet span {
+  color: white;
+}
+.prompet input,
+span.old {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-left: 7px;
 }

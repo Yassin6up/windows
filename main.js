@@ -299,31 +299,26 @@ class Table {
     page2Filles.querySelectorAll("div").forEach((ele, index) => {
       ele.onclick = () => {
         let regulr = /^www/gi;
-
         if (index === 0) {
           try {
             if (regulr.test(this.src1)) {
               /* khasni ndir whaed lfonction 3la hsab chno syd wrek
                mtlan wrek 3la about itl3o lih wahed l table akhor fih dakchi li kyn fl about */
             } else {
-              five = 10;
+              throw new Error("go to home");
             }
           } catch (error) {
             document
               .getElementById("audios")
-              .querySelectorAll("audio")
-              .forEach((el, inde) => {
-                if (inde === 0) {
-                  el.play();
-                }
-              });
+              .querySelectorAll("audio")[0]
+              .play();
           }
         } else if (index === 1) {
           try {
             if (regulr.test(this.src2)) {
               window.open(this.src2);
             } else {
-              five = 10;
+              throw new Error("go to home");
             }
           } catch (error) {
             document
@@ -340,7 +335,7 @@ class Table {
             if (regulr.test(this.src3)) {
               window.open(this.src3);
             } else {
-              five = 10;
+              throw new Error("amogos");
             }
           } catch (error) {
             document
@@ -357,7 +352,7 @@ class Table {
             if (regulr.test(this.src4)) {
               window.open(this.src4);
             } else {
-              five = 10;
+              throw new Error("amogos");
             }
           } catch (error) {
             document
@@ -374,7 +369,7 @@ class Table {
             if (regulr.test(this.src5)) {
               window.open(this.src5);
             } else {
-              five = 10;
+              throw new Error("amogos");
             }
           } catch (error) {
             document
@@ -391,7 +386,7 @@ class Table {
             if (regulr.test(this.src5)) {
               window.open(this.src5);
             } else {
-              five = 10;
+              throw new Error("amogos");
             }
           } catch (error) {
             document
@@ -509,3 +504,105 @@ document.getElementById("File").addEventListener("click", () => {
   document.body.append(table.format());
   clicks();
 });
+
+class Command {
+  /** @type {String} */
+  #commandName = "";
+  #handler = () => {};
+
+  /** @param {String} name */
+  constructor(name) {
+    this.#commandName = name;
+  }
+
+  get commandName() {
+    return this.#commandName;
+  }
+  setHandler(fn) {
+    this.#handler = fn;
+  }
+
+  /**
+   * @param {Array<String>} args
+   * @returns {String}
+   */
+  run(args) {
+    return this.#handler(args);
+  }
+}
+
+document.getElementById("cmd").onclick = () => {
+  let div = document.createElement("div");
+  div.className = "prompet";
+  // /** @type {Map<String, Command>} */
+  // const commands = new Map();
+  // /**
+  //  * @param {Command} cmd
+  //  */
+  // function addCommand(cmd) {
+  //   commands.set(cmd.commandName, cmd);
+  // }
+  const echo = new Command("echo");
+  echo.setHandler((args) => {
+    return args;
+  });
+
+  /**
+   * @param {String} line
+   * @returns {String}
+   */
+  function runCommand(line) {
+    if (line.startsWith(echo.commandName)) {
+      return echo.run(line.replace(`${echo.commandName} `, ""));
+    }
+  }
+
+  function createLine() {
+    let input = document.createElement("input");
+    let span = document.createElement("span");
+    let line = document.createElement("div");
+    line.style.display = "flex";
+    input.setAttribute("id", "cmd");
+    span.appendChild(document.createTextNode("C:\\Users\\USER>"));
+    line.appendChild(span);
+    line.appendChild(input);
+    input.onfocus = () => false;
+    input.onclick = () => false;
+    div.appendChild(line);
+    input.focus();
+
+    input.addEventListener("keyup", (ev) => {
+      if (ev.key == `Enter`) {
+        input.replaceWith(
+          (() => {
+            let span = document.createElement("span");
+            span.appendChild(document.createTextNode(input.value));
+            span.classList.add("old");
+            return span;
+          })()
+        );
+
+        div.appendChild(
+          (() => {
+            let line = document.createElement("div");
+            line.style.display = "flex";
+            line.style.color = "white";
+            line.appendChild(
+              document.createTextNode(
+                runCommand(input.value) === undefined
+                  ? "this command not exist"
+                  : runCommand(input.value)
+              )
+            );
+            return line;
+          })()
+        );
+
+        createLine();
+      }
+    });
+  }
+  createLine();
+
+  document.body.appendChild(div);
+};
